@@ -4,55 +4,68 @@ A high-end, gallery-inspired personal website bridging software engineering, 3D 
 
 ---
 
-## 🛠 Tech Stack & Tools
+## 🛠 Tech Stack & Ecosystem
 
+### Core Engine & Motion
 *   **Frontend Framework:** React & TypeScript.
 *   **Local Build Environment:** Vite or Next.js for optimal asset bundling.
-*   **Motion & Scroll Engine:** Anime.js v4 (utilizing the native `onScroll` timeline scrubbing for zero-latency UI and background syncing). 
-*   **Rendering Context:** HTML5 `<canvas>` sequence player for the zero-latency forward and reverse scroll scrubbing of background frames.
-*   **Prototyping & AI Generation:** 
-    *   Google AI Studio (Build mode) for full-stack React runtime, live browser previews, and conversational "vibe coding".
-    *   Google Flow for generating photorealistic 8k architectural background assets.
-*   **Design & Layout:** Figma for UI mockups.
-*   **Asset Hosting:** A dedicated CDN for serving heavy uncompressed image sequence frames instantly.
+*   **Motion & Scroll Engine:** [Anime.js v4](https://animejs.com/) (utilizing native `onScroll` timeline scrubbing for zero-latency UI and background syncing).
+*   **Rendering Context:** HTML5 `<canvas>` sequence player for zero-latency forward and reverse scroll scrubbing.
+
+### UI Components, Textures & Shaders
+*   **Interactive UI Primitives:** [React Bits](https://reactbits.dev/) (copy-paste React/TypeScript animated components like `SpotlightCard`, `TiltedCard`, and text reveals).
+*   **Minimal Preloaders:** [Uiverse Loaders](https://uiverse.io/loaders) (zero-dependency pure CSS loaders for initial asset buffering).
+*   **Procedural Noise & Grids:** [fffuel.co](https://www.fffuel.co/) (subtle SVG noise layers and micro-grids to eliminate gradient banding and add tactile grain to titanium panels).
+*   **3D / WebGL Particles (Optional):** [Casberry Particles](https://particles.casberry.in/) (isolated WebGL particle modules reserved for dynamic project showcase cards).
+
+### Prototyping & AI Generation
+*   **Prototyping & Live Previews:** [Google AI Studio](https://aistudio.google.com/apps) (Build mode) for full-stack React runtime, npm support, and conversational vibe coding.
+*   **Photorealistic Background Plates:** Google Flow for generating 8k monolithic architectural assets.
+*   **Design & System Mockups:** Figma.
+*   **Asset CDN:** Dedicated CDN for streaming uncompressed image sequence frames with instant load speeds.
 
 ---
 
 ## 🎨 Design System
 
-**Concept:** "The Monolithic Stage" (Gallery Pedestals)
-**Vibe:** Expensive studio lighting, physical architectural weight, pure dark negative space.
+**Concept:** "The Monolithic Stage" (Gallery Pedestals)  
+**Vibe:** Heavy physical presence, museum lighting, brushed titanium, dark negative space.
 
-*   **Primary Background:** Deep near-black charcoal and matte dark graphite (`#121212`).
-*   **Architectural Accents:** Brushed steel and titanium paneling.
+*   **Primary Canvas:** Deep matte graphite and near-black charcoal (`#121212`).
+*   **Architectural Accents:** Brushed steel and dark titanium paneling.
 *   **Lighting & Accent Color:** Subtle deep wine-red/burgundy (`#4A0E17`) ambient glows.
-*   **Typography:** Warm white (`#F5F5F0`) for maximum legibility against the dark void.
+*   **Typography:** Warm white (`#F5F5F0`) with generous tracking for maximum legibility.
+*   **Surface Texture:** 3% opacity SVG noise overlay generated via `fffuel.co`.
 
 ---
 
 ## 🚀 Execution Plan & Roadmap
 
-### Phase 1: Design Finalization & Asset Generation
-*   Complete the final Figma mockup for the "Monolithic Stage" concept (Selected Projects resting on dark steel pedestals).
-*   Finalize the typography scale, precise spacing, and exact color hex codes in Figma.
-*   Generate the final high-resolution background plates in Google Flow.
-*   Extract the background elements into a lightweight 5-10 frame ambient loop, or a complete camera-pan sequence for the `<canvas>` player.
-*   Prepare the transparent background portrait asset (`Professional_NoBackground.png`).
+### Phase 1: Design System & Asset Prep
+*   Finalize Figma mockups for the "Monolithic Stage" layout (Project cards resting on dark steel pedestals).
+*   Generate SVG micro-noise textures using `fffuel.co` to add grain to the dark graphite surfaces.
+*   Pick and customize a pure-CSS geometric preloader from `uiverse.io/loaders` (styled with `#4A0E17` burgundy accents).
+*   Extract the background elements into a lightweight 5–10 frame ambient loop, or a complete camera-pan sequence for the `<canvas>` player.
+*   Prepare the transparent background portrait cutout (`Professional_NoBackground.png`).
 
-### Phase 2: Prototyping in Google AI Studio
-*   Scaffold the initial React/TypeScript component tree inside Google AI Studio.
-*   Instruct the AI to build the HTML5 `<canvas>` sequence player using placeholder images.
-*   Implement Anime.js `onScroll` to tie the browser scrollbar directly to the canvas frame progression.
-*   Test the z-index layering, camera depth, and typography fade transitions (e.g., the crossfade from "Software Engineer" to "About Me") live in the browser.
-*   Convert the UI layouts exported from Figma directly into responsive React components.
+### Phase 2: Canvas Engine & Core Layout in Google AI Studio
+*   Scaffold the React/TypeScript structure in Google AI Studio.
+*   Build the HTML5 `<canvas>` sequence player driven by `anime.js` `onScroll` timeline synchronization.
+*   Wire the pinned Hero + About Me sequence:
+    *   State 1: Embossed *"SOFTWARE ENGINEER"* + Welcome text.
+    *   State 2: Dissolve & shrink hero copy; reveal embossed *"ABOUT ME"* and spartan bio.
+    *   State 3: Smooth exit of portrait downwards as the canvas transitions into the Monolithic Stage.
+*   Validate z-index layering, frame rates, and smooth scrubbing in live preview.
 
-### Phase 3: Interactive Features & Refinement
-*   Build the interactive hover states for the Project Cards using Anime.js (e.g., lighting up the pedestal or shifting the perspective).
-*   **Optional AI Integration:** Build an embedded, micro-styled AI chat widget powered by Gemini, trained specifically on the resume, skills, and Computer Science background as a "Recruiter Chat Concierge".
-*   Enforce the strict color palette (`#121212`, `#4A0E17`) across all generated UI sub-components.
+### Phase 3: Interactive UI Cards & Micro-Interactions
+*   Integrate `SpotlightCard` or `TiltedCard` components from `React Bits` for the **Selected Projects** showcase.
+*   Add hover states where dynamic rim lighting highlights the brushed metal pedestal under the active project card.
+*   Assemble the **Education & Skills** grid and **Work Process** (01 $\rightarrow$ 05) vertical conduit.
+*   *(Optional)* Embed an interactive WebGL demo module using `Casberry Particles` inside a specific project showcase card.
+*   *(Optional)* Configure an embedded Gemini-powered "Recruiter Chat Concierge" inside Google AI Studio.
 
-### Phase 4: Production Deployment
-*   Export the finalized React codebase directly from Google AI Studio to this GitHub repository.
-*   Set up the local Vite/Next.js environment.
-*   Upload all high-resolution generated background frames and video assets to a CDN for production-level load speeds.
-*   Deploy the live site (via Vercel, Netlify, or similar).
+### Phase 4: Production Build & Deployment
+*   Export the finalized codebase from Google AI Studio directly to GitHub.
+*   Set up local Vite/Next.js bundling and verify TypeScript types.
+*   Host background frames and high-resolution media on a dedicated CDN for instant load times.
+*   Deploy production build to Vercel / Netlify.
